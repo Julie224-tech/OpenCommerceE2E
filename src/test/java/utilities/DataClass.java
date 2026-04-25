@@ -9,8 +9,8 @@ public class DataClass {
         String path ="C:\\Users\\JULIELAMA\\Downloads\\ddt.xlsx";
         return ExcelUtil.getTestData(path, "Sheet1");
     }
-    
-    @DataProvider(name ="contactdata")
+}
+   /* @DataProvider(name ="contactdata")
     public Object[][] contactdata() 
     {
         return new Object[][] 
@@ -19,4 +19,4 @@ public class DataClass {
             
         }   ;       
     }
-}
+}*/
