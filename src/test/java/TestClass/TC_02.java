@@ -38,18 +38,18 @@ public class TC_02 extends BaseTest
 	        test.pass("Form submitted successfully");
 	        log.info("Form submitted successfully");
 }
-	        @Test(priority=2)
-	    	public void contactpagetest()
+	        @Test(priority=2, dataProvider="contactdata",dataProviderClass=DataClass.class)
+	    	public void contactpagetest(String name , String pwd)
 	    	{
 	    	ConfigReader config = new ConfigReader();
 	    	driver.get(config.getProperty("url2"));
 	    	ExtentReportManager.extentTest.get().pass("Running test for " +" Admin" + " on " + browserName);
 	    	contactpage cp = new contactpage(driver);
 	    	
-	    	cp.EnterOrangename("Admin");
+	    	cp.EnterOrangename(name);
 	    	log.info("Entering username");
 	    	
-	    	cp.EnterOrangepwd("admin123");
+	    	cp.EnterOrangepwd(pwd);
 	    	log.info("Entering password");
 	    	
 	    	cp.OrangeSubmit();
